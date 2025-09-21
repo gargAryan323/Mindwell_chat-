@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet" />
+    <title>AI Chat - Settings</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #fbbf24;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-[#14188f]">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+        <div class="flex h-full grow">
+            <aside class="flex w-64 flex-col gap-y-4 border-r border-white/20 bg-[#101470] p-4">
+                <a href="chat.html" class="flex items-center gap-2 p-2">
+                    <div class="w-8 h-8 rounded-full bg-[var(--primary-color)]"></div>
+                    <h1 class="text-white text-lg font-bold">AI Chat</h1>
+                </a>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-md px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" href="chat.html">
+                        <span class="material-symbols-outlined">home</span>
+                        <span class="text-sm font-medium">Home</span>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-md px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" href="chat.html">
+                        <span class="material-symbols-outlined">chat</span>
+                        <span class="text-sm font-medium">Chat</span>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-md px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" href="voice.html">
+                        <span class="material-symbols-outlined">mic</span>
+                        <span class="text-sm font-medium">Voice Chat</span>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-md px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" href="#">
+                        <span class="material-symbols-outlined">group</span>
+                        <span class="text-sm font-medium">Community</span>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-md px-3 py-2 bg-indigo-500 text-white" href="settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span class="text-sm font-medium">Settings</span>
+                    </a>
+                </nav>
+            </aside>
+            <main class="flex-1 bg-[#14188f] p-8">
+                <div class="max-w-4xl mx-auto relative">
+                    <h1 class="text-white text-4xl font-bold mb-8 relative">Settings</h1>
+                    <div class="space-y-12">
+                        <div>
+                            <h2 class="text-xl font-semibold text-pink-400 mb-4">Appearance</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-center justify-between p-4 bg-[#1a20a3] rounded-lg border border-white/10">
+                                    <div>
+                                        <p class="text-white font-medium">Theme</p>
+                                        <p class="text-gray-300 text-sm">Choose a theme for your chat interface.</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-gray-300">Dark</span>
+                                        <button class="p-1 rounded-md hover:bg-white/10">
+                                            <span class="material-symbols-outlined text-white">chevron_right</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-yellow-400 mb-4">Voice Chat</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-center justify-between p-4 bg-[#1a20a3] rounded-lg border border-white/10">
+                                    <div>
+                                        <p class="text-white font-medium">AI Voice Gender</p>
+                                        <p class="text-gray-300 text-sm">Select the gender of the AI voice.</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-gray-300">Female</span>
+                                        <button class="p-1 rounded-md hover:bg-white/10">
+                                            <span class="material-symbols-outlined text-white">chevron_right</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-[#1a20a3] rounded-lg border border-white/10">
+                                    <div>
+                                        <p class="text-white font-medium">Voice Speed</p>
+                                        <p class="text-gray-300 text-sm">Adjust the speed of the AI voice.</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-gray-300">Normal</span>
+                                        <button class="p-1 rounded-md hover:bg-white/10">
+                                            <span class="material-symbols-outlined text-white">chevron_right</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-indigo-400 mb-4">Notifications</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-center justify-between p-4 bg-[#1a20a3] rounded-lg border border-white/10">
+                                    <div>
+                                        <p class="text-white font-medium">Push Notifications</p>
+                                        <p class="text-gray-300 text-sm">Enable or disable push notifications.</p>
+                                    </div>
+                                    <label class="relative flex h-[28px] w-[52px] cursor-pointer items-center rounded-full bg-gray-600 p-1 has-[:checked]:bg-[var(--primary-color)] transition-colors">
+                                        <input checked="" class="peer sr-only" type="checkbox" />
+                                        <div class="h-5 w-5 rounded-full bg-white transition-transform transform translate-x-0 peer-checked:translate-x-6"></div>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-[#1a20a3] rounded-lg border border-white/10">
+                                    <div>
+                                        <p class="text-white font-medium">Email Notifications</p>
+                                        <p class="text-gray-300 text-sm">Enable or disable email notifications.</p>
+                                    </div>
+                                    <label class="relative flex h-[28px] w-[52px] cursor-pointer items-center rounded-full bg-gray-600 p-1 has-[:checked]:bg-[var(--primary-color)] transition-colors">
+                                        <input class="peer sr-only" type="checkbox" />
+                                        <div class="h-5 w-5 rounded-full bg-white transition-transform transform translate-x-0 peer-checked:translate-x-6"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-green-400 mb-4">General</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-center justify-between p-4 bg-[#1a20a3] rounded-lg border border-white/10">
+                                    <div>
+                                        <p class="text-white font-medium">Language</p>
+                                        <p class="text-gray-300 text-sm">Change the language of the application.</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-gray-300">English</span>
+                                        <button class="p-1 rounded-md hover:bg-white/10">
+                                            <span class="material-symbols-outlined text-white">chevron_right</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <a class="flex items-center justify-between p-4 bg-[#1a20a3] rounded-lg border border-white/10 group" href="#">
+                                    <div>
+                                        <p class="text-white font-medium">Terms of Service</p>
+                                        <p class="text-gray-300 text-sm">View the terms of service.</p>
+                                    </div>
+                                    <span class="material-symbols-outlined text-gray-300 group-hover:text-white">chevron_right</span>
+                                </a>
+                                <a class="flex items-center justify-between p-4 bg-[#1a20a3] rounded-lg border border-white/10 group" href="#">
+                                    <div>
+                                        <p class="text-white font-medium">Privacy Policy</p>
+                                        <p class="text-gray-300 text-sm">View the privacy policy.</p>
+                                    </div>
+                                    <span class="material-symbols-outlined text-gray-300 group-hover:text-white">chevron_right</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
