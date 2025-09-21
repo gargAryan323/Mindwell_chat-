@@ -1,4 +1,4 @@
-# app.py (Render-ready version)
+# app.py (Render-ready, fixed syntax)
 
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
@@ -48,4 +48,54 @@ def voice_page():
 # -----------------------
 # API Route for Chat
 # -----------------------
-@app.route("/api/chat", methods
+@app.route("/api/chat", methods=["POST"])
+def chat_api():
+    try:
+        data = request.get_json()
+        user_message = data.get("message", "")
+
+        # --- Gemini AI prompt ---
+        prompt = f"""
+        You are Mindwell, a caring AI companion. Your goal is to listen and provide gentle, supportive responses.
+        A user has shared the following: '{user_message}'
+
+        Your task:
+        1. Keep your reply very short, ideally one or two caring sentences.
+        2. Use a warm, empathetic, and non-judgmental tone.
+        3. Do not give complex advice. Instead, validate their feelings and make them feel heard.
+        4. If appropriate, you can ask a simple, open-ended question to show you are listening.
+
+        Your gentle reply:
+        """
+
+        response = model.generate_content(prompt)
+        reply_text = response.text
+
+        # --- Google TTS synthesis ---
+        synthesis_input = texttospeech.SynthesisInput(text=reply_text)
+        voice = texttospeech.VoiceSelectionParams(
+            language_code="en-US",
+            name="en-US-Wavenet-F",  # Calm female WaveNet voice
+            ssml_gender=texttospeech.SsmlVoiceGender.FEMALE
+        )
+        audio_config = texttospeech.AudioConfig(audio_encoding=texttospeech.AudioEncoding.MP3)
+
+        tts_response = tts_client.synthesize_speech(
+            input=synthesis_input,
+            voice=voice,
+            audio_config=audio_config
+        )
+
+        audio_base64 = base64.b64encode(tts_response.audio_content).decode("utf-8")
+
+        return jsonify({"reply": reply_text, "audio": audio_base64})
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return jsonify({"error": str(e)}), 500
+
+# -----------------------
+# Main
+# -----------------------
+if __name__ == "__main__":
+    app.run(debug=True)
